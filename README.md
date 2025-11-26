@@ -1,144 +1,22 @@
-It is stored in Google Drive and loaded directly through Colab.
+## Problem & Motivation 🚀
 
----
+Machine learning and deep learning have become powerful tools for image classification. However, real-world applications often require balancing **model accuracy**, **training speed**, and **generalization** — especially when working with limited data or computational resources.
 
-### ✔ Model Architecture — AlexNet  
+For my project, I am working with a custom image dataset stored on my Google Drive (path: `/content/drive/MyDrive/dataset`). Since the dataset is not very large, it's important to understand:
 
-AlexNet is a classic CNN consisting of:
+- Which model architecture yields the best performance  
+- How training parameters (like batch size and learning rate) affect convergence  
+- Whether data augmentation helps improve generalization  
+- The trade-offs between using a pretrained model vs. training from scratch  
 
-- 5 convolutional layers  
-- ReLU activations  
-- MaxPooling  
-- Dropout  
-- 3 fully connected classifier layers  
+This project aims to systematically explore these trade-offs across multiple axes:
 
-For transfer learning:
+- **Model architecture**: comparing classical convolutional models (AlexNet, VGG16, ResNet18)  
+- **Pretraining vs. training from scratch**: evaluating if pretrained weights give a meaningful advantage on a small dataset  
+- **Hyper-parameters**: testing different batch sizes and learning rates for stability and speed  
+- **Data augmentation**: assessing if random transformations help against overfitting  
 
-1. Load pretrained AlexNet  
-2. Replace the classifier output layer with the number of dataset classes  
-3. Fine-tune all layers  
+By doing this, the goal is to find a configuration that is **both accurate and practical** — producing high test accuracy while still training quickly and generalizing well.  
+This is particularly useful for projects where compute is limited (e.g., personal laptops, minimal GPU), or for rapid prototyping and deployment.
 
-AlexNet is chosen because:
-
-- Fast to train  
-- Lightweight  
-- Good baseline architecture  
-- Easy to compare with deeper models like VGG16 and ResNet18  
-
----
-
-### ✔ Training Pipeline
-
-Every experiment uses the same core training loop:
-
-- Adam optimizer  
-- Cross-entropy loss  
-- DataLoader for batching  
-- GPU acceleration (if available)  
-- Automatic logging to W&B:  
-  - training accuracy  
-  - validation accuracy  
-  - loss curves  
-  - hyperparameters  
-  - architecture type  
-
-Each experiment is encapsulated inside a reusable function, making the notebook modular and clean.
-
----
-
-## 📊 3. Experiments & Visualizations
-
-Below are the four required experiments.
-
-### ### **Experiment 1 — Batch Size Comparison**
-Models trained with:
-- **Batch size = 16**
-- **Batch size = 64**
-
-Visualization goals:
-- Training accuracy curves
-- Validation accuracy curves
-- Training vs. validation loss
-
----
-
-### ### **Experiment 2 — Learning Rate Comparison**
-Models trained with:
-- **LR = 0.001**
-- **LR = 0.0001**
-
-Visualization goals:
-- Convergence rate differences  
-- Overshooting / underfitting patterns  
-- Stability of loss curves  
-
----
-
-### ### **Experiment 3 — Data Augmentation**
-Two training runs:
-- No augmentation  
-- With augmentation:
-  - RandomRotation  
-  - HorizontalFlip  
-  - ColorJitter  
-
-Visualization:
-- Impact of augmentation on generalization  
-- Reduction of overfitting  
-
----
-
-### ### **Experiment 4 — Architecture Comparison**
-Models evaluated:
-- **AlexNet**  
-- **VGG16**  
-- **ResNet18**
-
-Visualization:
-- Compare accuracy across architectures  
-- Compare compute time  
-- Parameter count vs. accuracy  
-- Deeper networks’ effect on performance  
-
----
-
-## 📈 4. Results (Example Format)
-
-You will insert your real W&B graphs here.
-
-### Example Result Structure:
-
-#### **Batch Size Results**
-- Batch size 16 → higher accuracy, slower per-epoch  
-- Batch size 64 → faster per-epoch, slightly lower accuracy  
-
-#### **Learning Rate Results**
-- LR 0.001 → quicker convergence  
-- LR 0.0001 → more stable but slower  
-
-#### **Data Augmentation Results**
-- Augmentation improved test accuracy by X%  
-- Reduced overfitting visible in loss curves  
-
-#### **Architecture Comparison**
-| Model     | Accuracy | Params | Notes |
-|-----------|----------|--------|-------|
-| AlexNet   | 84%      | 60M    | Good baseline |
-| VGG16     | 90%      | 138M   | Very accurate but heavy |
-| ResNet18  | 88%      | 11M    | Good trade-off |
-
-(Replace with your actual results)
-
----
-
-## 📝 5. Takeaways
-
-- Hyperparameters significantly affect convergence speed and stability.  
-- Data augmentation greatly improves generalization.  
-- AlexNet is a strong baseline, but deeper architectures like ResNet and VGG perform better on complex datasets.  
-- W&B experiment tracking makes comparisons simple and professional.  
-- Running structured experiments helps replicate real ML pipeline workflows.  
-
----
-
-## 📦 6. Project Structure (Recommended)
+In short: I want to understand *what works best — and why* — for my dataset, so that I can apply this knowledge to future classification tasks with confidence.
