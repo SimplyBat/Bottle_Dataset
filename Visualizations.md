@@ -1,4 +1,4 @@
-## 📊 Visualizations
+# 📊 Visualizations
 
 This section includes all plots generated during training in Colab.  
 ## WB Training vs Testing Accuracy
