@@ -25,3 +25,13 @@ This section includes all plots generated during training in Colab.
 <img width="999" height="381" alt="batch size colab 2" src="https://github.com/user-attachments/assets/180f9a16-f686-4c96-9a15-3aebe66d59f5" />
 
 <img width="996" height="381" alt="batch size colab" src="https://github.com/user-attachments/assets/cdc4303e-1dbf-4e21-a1d4-bf720e72a48e" />
+
+# Learning Rate Experiments
+## Wobbly smoke: Learning rate 0.001
+## Toasty Sun: Learning rate 0.0001
+
+<img width="1074" height="628" alt="Learning rate WB" src="https://github.com/user-attachments/assets/f527b8df-ef83-4715-a613-5818d656e169" />
+
+<img width="998" height="381" alt="Learning Rate 0 0001 colab 2" src="https://github.com/user-attachments/assets/d7abbbeb-94a4-49a8-8a47-ae6e8cd22d65" />
+
+<img width="998" height="381" alt="Learning rate 0 001 colab 1" src="https://github.com/user-attachments/assets/8ead7551-9406-4856-a290-dc1bf08af0cf" />
