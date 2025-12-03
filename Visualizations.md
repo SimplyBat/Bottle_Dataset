@@ -19,5 +19,7 @@ This section includes all plots generated during training in Colab.
 ## Batch Size
 
 <img width="999" height="381" alt="batch size colab 2" src="https://github.com/user-attachments/assets/180f9a16-f686-4c96-9a15-3aebe66d59f5" />
+
 <img width="1073" height="630" alt="batch size WB" src="https://github.com/user-attachments/assets/3eae6cea-39fb-4c57-878e-445962f20657" />
+
 <img width="996" height="381" alt="batch size colab" src="https://github.com/user-attachments/assets/cdc4303e-1dbf-4e21-a1d4-bf720e72a48e" />
