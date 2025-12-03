@@ -34,7 +34,7 @@ This section includes all plots generated during training in Colab.
 
 <img width="987" height="380" alt="Data Augmentation colab 2" src="https://github.com/user-attachments/assets/df4bac28-65a7-47a8-8794-05c053021955" />
 
-#Architecture Comparison
+# Architecture Comparison
 ## Wobbly Star: ResNet
 ## Volcanic Oath: VGG16
 ## Grateful Dew: AlexNet
