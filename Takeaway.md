@@ -1,5 +1,5 @@
-## These Experiments evaluated the impact of hardware acceleration, hyperparameter tuning, and model architecture on image classification performance.
 # Key Takeaways
+## These Experiments evaluated the impact of hardware acceleration, hyperparameter tuning, and model architecture on image classification performance.
 
 ResNet18 Outperformed Legacy Architectures ResNet18 achieved the highest validation accuracy (65%), proving that residual connections were necessary for feature learning on this dataset. In contrast, AlexNet and VGG16 suffered from stagnation, failing to improve beyond the baseline accuracy of 59%.
 
