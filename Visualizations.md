@@ -17,8 +17,8 @@ This section includes all plots generated during training in Colab.
 <img width="1370" height="644" alt="CPU VS GPU" src="https://github.com/user-attachments/assets/17a4e46a-b917-4d55-ba2c-1f102ad3701e" />
 
 ## Batch Size Experiments 
-## Solar Terrain: Batch Size 16 
-## Noble Puddle: Batch size 64
+# Solar Terrain: Batch Size 16 
+# Noble Puddle: Batch size 64
 
 <img width="1073" height="630" alt="batch size WB" src="https://github.com/user-attachments/assets/3eae6cea-39fb-4c57-878e-445962f20657" />
 
