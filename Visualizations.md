@@ -42,8 +42,10 @@ This section includes all plots generated during training in Colab.
 
 <img width="999" height="381" alt="Data Augmention colab" src="https://github.com/user-attachments/assets/794cb402-1b2d-4c15-8a87-d0abe23348f6" />
 
+<img width="987" height="380" alt="Data Augmentation colab 2" src="https://github.com/user-attachments/assets/df4bac28-65a7-47a8-8794-05c053021955" />
+
 <img width="1080" height="633" alt="Data augmentation WB" src="https://github.com/user-attachments/assets/d2391112-b6cc-4111-b9a6-17fc76d567d3" />
 
-<img width="987" height="380" alt="Data Augmentation colab 2" src="https://github.com/user-attachments/assets/df4bac28-65a7-47a8-8794-05c053021955" />
+
 
 
