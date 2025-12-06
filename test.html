@@ -167,23 +167,23 @@ footer {
 <div class="section fade-in">
   <h1>Technical Approach ⚙️</h1>
   <p>
-    Implemented <span class="purple">AlexNet</span> To evaluate the performance of classical convolutional networks on my custom dataset, I implemented and trained <span class="purple">AlexNet</span>, one of the earliest high-impact deep learning architectures for image classification. Although AlexNet is not state-of-the-art today, it provides a strong baseline and is ideal for comparing training behaviors under different conditions.
+    To establish a robust baseline for the automated sorting of recyclable materials, we implemented <span class="purple">AlexNet</span>, a pioneering Convolutional Neural Network (CNN). This architecture was selected due to its historical significance in defining modern deep learning computer vision and its balance between computational depth and parameter efficiency compared to heavier models like VGG16.
 
   <h2>Model Architecture Overview 🧱</h2>
   <ul>
-    <li>5 convolutional layers with ReLU</li>
+    <li>Five convolutional layers <span class="purple">Conv2d</span> designed to capture hierarchical features, from basic edges to complex textures found on glass and plastic surfaces.</li>
     <li>Local Response Normalization (LRN)</li>
-    <li>Max-pooling layers</li>
+    <li>Max-pooling layers were utilized to down-sample the spatial dimensions (224×224 input)</li>
     <li>3 fully connected layers with dropout</li>
   </ul>
 
   <h2>Implementation Strategy 🔧</h2>
-  <h3>1. Importing Pretrained AlexNet</h3>
-  <p>Used pretrained ImageNet weights and also trained from scratch.</p>
+  <h3>1. Data Pipeline & Preprocessing</h3>
+  <p>All input images were resized to 224 × 224 pixels to match the native input resolution of the AlexNet architecture.</p>
 
-  <h3>2. Customizing the Classifier</h3>
+  <h3>2. Development Environment Setup</h3>
   <div class="code-block">
-model.classifier[6] = nn.Linear(4096, num_classes)
+  </p>Platform: Google Colab was selected for its cloud-based Jupyter notebook environment, allowing for rapid iteration and visualization.</p>
   </div>
 </div>
 
