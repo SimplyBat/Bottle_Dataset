@@ -85,70 +85,48 @@ model.classifier[6] = nn.Linear(4096, num_classes)
 <h1>📊 Visualizations</h1>
 <p>This section includes all plots generated during training in Colab.</p>
 
-<!-- Training Accuracy -->
-<div class="section">
+<section>
   <h2>WB Training vs Testing Accuracy</h2>
-  <img src="https://github.com/user-attachments/assets/95866d31-a80f-4c1b-9c7b-1809f5831bcb" alt="WB Training vs Testing Accuracy" />
-</div>
+  <img src="https://raw.githubusercontent.com/SimplyBat/Bottle_Dataset/main/images/Learning%20rate%20WB.png" alt="WB Training vs Testing Accuracy">
+</section>
 
-<!-- Batch Size Section -->
-<div class="section">
-  <h1>Batch Size Experiments</h1>
+<section>
+  <h2>Batch Size Experiments</h2>
+  <h3>Solar Terrain: Batch Size 16</h3>
+  <h3>Noble Puddle: Batch Size 64</h3>
+  <img src="https://raw.githubusercontent.com/SimplyBat/Bottle_Dataset/main/images/batch%20size%20WB.png" alt="Batch Size WB">
+  <img src="https://raw.githubusercontent.com/SimplyBat/Bottle_Dataset/main/images/batch%20size%20colab%202.png" alt="Batch Size Colab 2">
+  <img src="https://raw.githubusercontent.com/SimplyBat/Bottle_Dataset/main/images/batch%20size%20colab.png" alt="Batch Size Colab">
+</section>
 
-  <h2>Solar Terrain: Batch Size 16</h2>
-  <h2>Noble Puddle: Batch Size 64</h2>
+<section>
+  <h2>Learning Rate Experiments</h2>
+  <h3>Wobbly Smoke: Learning rate 0.001</h3>
+  <h3>Toasty Sun: Learning rate 0.0001</h3>
+  <img src="https://raw.githubusercontent.com/SimplyBat/Bottle_Dataset/main/images/learning%20rate%20WB.png" alt="Learning Rate WB">
+  <img src="https://raw.githubusercontent.com/SimplyBat/Bottle_Dataset/main/images/Learning%20Rate%200.0001%20colab%202.png" alt="Learning Rate 0.0001 Colab 2">
+  <img src="https://raw.githubusercontent.com/SimplyBat/Bottle_Dataset/main/images/learning%20rate%200.001%20colab%201.png" alt="Learning Rate 0.001 Colab 1">
+</section>
 
-  <img src="https://github.com/user-attachments/assets/3eae6cea-39fb-4c57-878e-445962f20657" alt="Batch Size WB" />
+<section>
+  <h2>Data Augmentation Experiments</h2>
+  <h3>Warm Microwave: Non-Augmentation</h3>
+  <h3>Earthy Plant: Augmentation</h3>
+  <img src="https://raw.githubusercontent.com/SimplyBat/Bottle_Dataset/main/images/Data%20augmentation%20WB.png" alt="Data Augmentation WB">
+  <img src="https://raw.githubusercontent.com/SimplyBat/Bottle_Dataset/main/images/Data%20Augmention%20colab.png" alt="Data Augmentation Colab">
+  <img src="https://raw.githubusercontent.com/SimplyBat/Bottle_Dataset/main/images/Data%20Augmentation%20colab%202.png" alt="Data Augmentation Colab 2">
+</section>
 
-  <img src="https://github.com/user-attachments/assets/180f9a16-f686-4c96-9a15-3aebe66d59f5" alt="Batch Size Colab 2" />
-
-  <img src="https://github.com/user-attachments/assets/cdc4303e-1dbf-4e21-a1d4-bf720e72a48e" alt="Batch Size Colab" />
-</div>
-
-<!-- Learning Rate -->
-<div class="section">
-  <h1>Learning Rate Experiments</h1>
-
-  <h2>Wobbly Smoke: Learning Rate 0.001</h2>
-  <h2>Toasty Sun: Learning Rate 0.0001</h2>
-
-  <img src="https://github.com/user-attachments/assets/f527b8df-ef83-4715-a613-5818d656e169" alt="Learning Rate WB" />
-
-  <img src="https://github.com/user-attachments/assets/d7abbbeb-94a4-49a8-8a47-ae6e8cd22d65" alt="Learning Rate 0.0001 Colab 2" />
-
-  <img src="https://github.com/user-attachments/assets/8ead7551-9406-4856-a290-dc1bf08af0cf" alt="Learning Rate 0.001 Colab 1" />
-</div>
-
-<!-- Data Augmentation -->
-<div class="section">
-  <h1>Data Augmentation Experiments</h1>
-
-  <h2>Warm Microwave: Non-Augmentation</h2>
-  <h2>Earthy Plant: Augmentation</h2>
-
-  <img src="https://github.com/user-attachments/assets/d2391112-b6cc-4111-b9a6-17fc76d567d3" alt="Data Augmentation WB" />
-
-  <img src="https://github.com/user-attachments/assets/794cb402-1b2d-4c15-8a87-d0abe23348f6" alt="Data Augmentation Colab" />
-
-  <img src="https://github.com/user-attachments/assets/df4bac28-65a7-47a8-8794-05c053021955" alt="Data Augmentation Colab 2" />
-</div>
-
-<!-- Architecture Comparison -->
-<div class="section">
-  <h1>Architecture Comparison</h1>
-
-  <h2>Wobbly Star: ResNet</h2>
-  <h2>Volcanic Oath: VGG16</h2>
-  <h2>Grateful Dew: AlexNet</h2>
-
-  <img src="https://github.com/user-attachments/assets/6b28dbd8-736e-4dc5-8db5-3ed4c5d349f0" alt="Architecture Comparison WB" />
-
-  <img src="https://github.com/user-attachments/assets/b6300147-1ca7-4eb7-ba47-b70b9803c216" alt="Architecture Comparison Colab 3" />
-
-  <img src="https://github.com/user-attachments/assets/5401697a-70e8-481e-b6b8-553e2d36da5b" alt="Architecture Comparison Colab 2" />
-
-  <img src="https://github.com/user-attachments/assets/2f9ff29e-9ea1-4540-b2da-137877b60e93" alt="Architecture Comparison Colab 1" />
-</div>
+<section>
+  <h2>Architecture Comparison</h2>
+  <h3>Wobbly Star: ResNet</h3>
+  <h3>Volcanic Oath: VGG16</h3>
+  <h3>Grateful Dew: AlexNet</h3>
+  <img src="https://raw.githubusercontent.com/SimplyBat/Bottle_Dataset/main/images/Architecture%20comparison%20WB.png" alt="Architecture Comparison WB">
+  <img src="https://raw.githubusercontent.com/SimplyBat/Bottle_Dataset/main/images/Architecture%20comparison%203%20colab.png" alt="Architecture Comparison 3 Colab">
+  <img src="https://raw.githubusercontent.com/SimplyBat/Bottle_Dataset/main/images/Architecture%20comparison%202%20colab.png" alt="Architecture Comparison 2 Colab">
+  <img src="https://raw.githubusercontent.com/SimplyBat/Bottle_Dataset/main/images/Architecture%20comparison%201%20colab.png" alt="Architecture Comparison 1 Colab">
+</section>
 
 </body>
 </html>
