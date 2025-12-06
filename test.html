@@ -252,14 +252,14 @@ window.addEventListener('DOMContentLoaded', () => {
     el.style.opacity = 0;
     el.style.transform = 'translateY(25px)';
   });
- window.addEventListener('DOMContentLoaded', () => {
+window.addEventListener('DOMContentLoaded', () => {
   const elements = document.querySelectorAll('.section, .hero');
 
   function handleScroll() {
     const triggerBottom = window.innerHeight * 0.85;
     elements.forEach(el => {
       const rect = el.getBoundingClientRect();
-      if (rect.top < triggerBottom && rect.bottom > 0) {
+      if (rect.top < triggerBottom) { // once top enters viewport
         el.style.opacity = 1;
         el.style.transform = 'translateY(0)';
       }
@@ -267,7 +267,7 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 
   window.addEventListener('scroll', handleScroll);
-  handleScroll(); // optional, to catch elements in view on load
+  handleScroll(); // immediately check elements in view
 });
 </script>
 
