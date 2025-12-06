@@ -232,12 +232,13 @@ model.classifier[6] = nn.Linear(4096, num_classes)
 <div class="divider"></div>
 
 <footer>
-  AlexNet Project • Modern, minimal Apple-inspired style
+  Pure Earth AI • AlexNet Architecture
 </footer>
 
 <script>
 window.addEventListener('DOMContentLoaded', () => {
   const elements = document.querySelectorAll('.section, .hero');
+
   function handleScroll() {
     const triggerBottom = window.innerHeight * 0.85;
     elements.forEach(el => {
@@ -245,19 +246,13 @@ window.addEventListener('DOMContentLoaded', () => {
       if (rect.top < triggerBottom && rect.bottom > 0) {
         el.style.opacity = 1;
         el.style.transform = 'translateY(0)';
-      } else {
-        el.style.opacity = 0;
-        el.style.transform = 'translateY(25px)';
       }
     });
   }
-  elements.forEach(el => {
-    el.style.transition = 'opacity 0.8s ease-out, transform 0.8s ease-out';
-    el.style.opacity = 0;
-    el.style.transform = 'translateY(25px)';
-  });
+
   window.addEventListener('scroll', handleScroll);
-  handleScroll();
+  handleScroll(); // optional, to catch elements in view on load
+});
 });
 </script>
 
