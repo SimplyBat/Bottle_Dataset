@@ -35,6 +35,44 @@
 </head>
 
 <body>
+<section id="problem-motivation">
+  <h2>## Problem & Motivation 🚀</h2>
+  <p>
+    Machine learning and deep learning have become powerful tools for image classification.
+    However, real-world applications often require balancing <strong>model accuracy</strong>, 
+    <strong>training speed</strong>, and <strong>generalization</strong> — especially when working with limited data or computational resources.
+  </p>
+
+  <p>
+    For my project, I am working with a custom image dataset stored on my Google Drive 
+    (path: <code>/content/drive/MyDrive/dataset</code>).
+  </p>
+
+  <ul>
+    <li>Which model architecture yields the best performance</li>
+    <li>How training parameters (like batch size and learning rate) affect convergence</li>
+    <li>Whether data augmentation helps improve generalization</li>
+    <li>The trade-offs between using a pretrained model vs. training from scratch</li>
+  </ul>
+
+  <p>This project aims to systematically explore these trade-offs across multiple axes:</p>
+
+  <ul>
+    <li><strong>Model architecture</strong>: comparing classical convolutional models (AlexNet, VGG16, ResNet18)</li>
+    <li><strong>Pretraining vs. training from scratch</strong>: evaluating if pretrained weights give a meaningful advantage on a small dataset</li>
+    <li><strong>Hyper-parameters</strong>: testing different batch sizes and learning rates for stability and speed</li>
+    <li><strong>Data augmentation</strong>: assessing if random transformations help against overfitting</li>
+  </ul>
+
+  <p>
+    By doing this, the goal is to find a configuration that is <strong>both accurate and practical</strong> — producing high test accuracy while still training quickly and generalizing well.  
+    This is particularly useful for projects where compute is limited (e.g., personal laptops, minimal GPU), or for rapid prototyping and deployment.
+  </p>
+
+  <p>
+    In short: I want to understand <em>what works best — and why</em> — for my dataset, so that I can apply this knowledge to future classification tasks with confidence.
+  </p>
+</section>
 
 <h1>Technical Approach with AlexNet ⚙️</h1>
 
