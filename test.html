@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>AlexNet – Project Results</title>
+<title>Pure Earth AI – Project Results</title>
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Montserrat:wght@300;500;700&display=swap');
@@ -111,8 +111,12 @@ body {
 
 .fade-in {
   opacity: 0;
-  transform: translateY(25px);
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  animation: fadeIn 1.1s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(25px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 footer {
@@ -126,7 +130,7 @@ footer {
 
 <body>
 
-<div class="fixed-title">Pure Earth AI</div>
+<div class="fixed-title">PureEarth AI</div>
 
 <div class="hero fade-in">
   <h1 class="fade-in">AlexNet Project Results</h1>
@@ -252,22 +256,8 @@ window.addEventListener('DOMContentLoaded', () => {
     el.style.opacity = 0;
     el.style.transform = 'translateY(25px)';
   });
-window.addEventListener('DOMContentLoaded', () => {
-  const elements = document.querySelectorAll('.section, .hero');
-
-  function handleScroll() {
-    const triggerBottom = window.innerHeight * 0.85;
-    elements.forEach(el => {
-      const rect = el.getBoundingClientRect();
-      if (rect.top < triggerBottom) { // once top enters viewport
-        el.style.opacity = 1;
-        el.style.transform = 'translateY(0)';
-      }
-    });
-  }
-
   window.addEventListener('scroll', handleScroll);
-  handleScroll(); // immediately check elements in view
+  handleScroll();
 });
 </script>
 
