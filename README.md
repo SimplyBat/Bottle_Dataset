@@ -2,7 +2,7 @@
 
 Machine learning and deep learning have become powerful tools for image classification. However, real-world applications often require balancing **model accuracy**, **training speed**, and **generalization** — especially when working with limited data or computational resources.
 
-For my project, I am working with a custom image dataset stored on my Google Drive (path: `/content/drive/MyDrive/dataset`). Since the dataset is not very large, it's important to understand:
+For my project, I am working with a custom image dataset stored on my Google Drive (path: `/content/drive/MyDrive/dataset`).
 
 - Which model architecture yields the best performance  
 - How training parameters (like batch size and learning rate) affect convergence  
