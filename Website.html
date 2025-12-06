@@ -1,170 +1,260 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AlexNet Experiments – Project Results</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 40px;
-      line-height: 1.6;
-      background: #fafafa;
-      color: #222;
-    }
-    h1, h2, h3 {
-      color: #222;
-      margin-top: 1.5em;
-    }
-    .section {
-      margin-bottom: 50px;
-    }
-    img {
-      max-width: 100%;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-      margin: 10px 0 30px 0;
-      display: block;
-    }
-    .code-block {
-      background: #f4f4f4;
-      padding: 12px;
-      border-left: 4px solid #444;
-      font-family: monospace;
-      white-space: pre-wrap;
-      margin: 10px 0;
-    }
-    ul {
-      margin-left: 20px;
-    }
-    li p {
-      margin: 0.5em 0;
-    }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Pure Earth AI – Project Results</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Montserrat:wght@300;500;700&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #ffffff;
+  font-family: 'Inter', sans-serif;
+  color: #004040;
+  line-height: 1.6;
+  scroll-behavior: smooth;
+}
+
+.fixed-title {
+  position: fixed;
+  top: 20px;
+  left: 25px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  color: #004040;
+  z-index: 999;
+  letter-spacing: 0.6px;
+}
+
+.hero {
+  text-align: center;
+  padding: 120px 20px 60px;
+}
+
+.hero h1 {
+  font-size: 60px;
+  font-weight: 300;
+  letter-spacing: -1px;
+  margin-bottom: 20px;
+}
+
+.section {
+  max-width: 900px;
+  margin: auto;
+  padding: 80px 20px;
+}
+
+.section h1 {
+  font-size: 48px;
+  font-weight: 300;
+  margin-bottom: 20px;
+}
+
+.section h2 {
+  font-size: 36px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.section h3 {
+  font-size: 28px;
+  font-weight: 500;
+  margin-bottom: 15px;
+}
+
+.section p {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.section ul {
+  margin-left: 20px;
+}
+
+.section li p {
+  margin: 0.5em 0;
+}
+
+.section img {
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+  margin-top: 30px;
+  display: block;
+}
+
+.code-block {
+  background: #f4f4f4;
+  padding: 12px;
+  border-left: 4px solid #004040;
+  font-family: monospace;
+  white-space: pre-wrap;
+  margin: 20px 0;
+  border-radius: 10px;
+}
+
+.purple {
+  color: #7A00FF;
+  font-weight: 700;
+}
+
+.divider {
+  height: 1px;
+  width: 100%;
+  background: #cfd5d5;
+  margin: 60px 0;
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 1.1s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(25px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+footer {
+  text-align: center;
+  padding: 80px 20px 40px;
+  color: #004040;
+  font-size: 14px;
+}
+</style>
 </head>
+
 <body>
 
+<div class="fixed-title">PureEarth AI</div>
+
+<div class="hero fade-in">
+  <h1 class="fade-in">AlexNet Project Results</h1>
+  <p class="fade-in" style="font-size:22px;">
+    Evaluating <span class="purple">model accuracy</span>, <span class="purple">training parameters</span>, and <span class="purple">architecture comparisons</span> on a custom image dataset.
+  </p>
+</div>
+
+<div class="divider"></div>
+
 <!-- Problem & Motivation -->
-<section id="problem-motivation" class="section">
+<div class="section fade-in">
   <h2>Problem & Motivation 🚀</h2>
   <p>
     Machine learning and deep learning have become powerful tools for image classification.
-    However, real-world applications often require balancing <strong>model accuracy</strong>, 
-    <strong>training speed</strong>, and <strong>generalization</strong> — especially when working with limited data or computational resources.
+    Real-world applications require balancing <span class="purple">accuracy</span>, 
+    <span class="purple">training speed</span>, and <span class="purple">generalization</span>—especially with limited data or compute.
   </p>
-  <p>For my project, I am working with a custom image dataset stored on my Google Drive 
-    (path: <code>/content/drive/MyDrive/dataset</code>).</p>
-
-  <ul>
-    <li>Which model architecture yields the best performance</li>
-    <li>How training parameters (like batch size and learning rate) affect convergence</li>
-    <li>Whether data augmentation helps improve generalization</li>
-    <li>The trade-offs between using a pretrained model vs. training from scratch</li>
-  </ul>
-
-  <p>This project aims to systematically explore these trade-offs across multiple axes:</p>
-
-  <ul>
-    <li><strong>Model architecture:</strong> comparing classical convolutional models (AlexNet, VGG16, ResNet18)</li>
-    <li><strong>Pretraining vs. training from scratch:</strong> evaluating if pretrained weights give a meaningful advantage on a small dataset</li>
-    <li><strong>Hyper-parameters:</strong> testing different batch sizes and learning rates for stability and speed</li>
-    <li><strong>Data augmentation:</strong> assessing if random transformations help against overfitting</li>
-  </ul>
-
   <p>
-    By doing this, the goal is to find a configuration that is <strong>both accurate and practical</strong> — producing high test accuracy while still training quickly and generalizing well.  
-    This is particularly useful for projects where compute is limited (e.g., personal laptops, minimal GPU), or for rapid prototyping and deployment.
+    Dataset path: <code>/content/drive/MyDrive/dataset</code>
   </p>
 
-  <p>In short: I want to understand <em>what works best — and why</em> — for my dataset, so that I can apply this knowledge to future classification tasks with confidence.</p>
-</section>
+  <ul>
+    <li>Best performing model architecture</li>
+    <li>Impact of batch size and learning rate</li>
+    <li>Effect of data augmentation</li>
+    <li>Pretrained vs training from scratch</li>
+  </ul>
+</div>
+
+<div class="divider"></div>
 
 <!-- Technical Approach -->
-<section class="section">
-  <h1>Technical Approach with AlexNet ⚙️</h1>
+<div class="section fade-in">
+  <h1>Technical Approach ⚙️</h1>
   <p>
-    To evaluate the performance of classical convolutional networks on my dataset 
-    (<code>/content/drive/MyDrive/dataset</code>), I implemented and trained 
-    <strong>AlexNet</strong>, one of the earliest high-impact deep learning architectures for image classification. 
-    Although AlexNet is not state-of-the-art today, it provides a strong baseline and is ideal for comparing training behaviors under different conditions.
+    Implemented <span class="purple">AlexNet</span> as a baseline architecture to compare training behaviors under different conditions.
   </p>
 
-  <h2>🧱 Model Architecture (AlexNet Overview)</h2>
-  <p>AlexNet consists of:</p>
+  <h2>Model Architecture Overview 🧱</h2>
   <ul>
-    <li>5 convolutional layers with ReLU activation</li>
+    <li>5 convolutional layers with ReLU</li>
     <li>Local Response Normalization (LRN)</li>
     <li>Max-pooling layers</li>
-    <li>3 fully connected layers</li>
-    <li>Dropout in fully connected layers</li>
+    <li>3 fully connected layers with dropout</li>
   </ul>
-  <p>The model is lighter than modern networks like ResNet or EfficientNet, making it easy to train on Google Colab while still expressive enough for complex visual patterns.</p>
 
-  <h2>🔧 Implementation Strategy</h2>
+  <h2>Implementation Strategy 🔧</h2>
   <h3>1. Importing Pretrained AlexNet</h3>
-  <p>I used pretrained ImageNet weights, and also trained AlexNet from scratch.</p>
+  <p>Used pretrained ImageNet weights and also trained from scratch.</p>
 
   <h3>2. Customizing the Classifier</h3>
   <div class="code-block">
 model.classifier[6] = nn.Linear(4096, num_classes)
   </div>
-</section>
+</div>
+
+<div class="divider"></div>
 
 <!-- Visualizations -->
-<section class="section">
-  <h1>📊 Visualizations</h1>
-  <p>This section includes all plots generated during training in Colab.</p>
+<div class="section fade-in">
+  <h1>Visualizations 📊</h1>
+  <p>All plots generated during training in Colab.</p>
 
   <h2>WB Training vs Testing Accuracy</h2>
   <img src="https://raw.githubusercontent.com/SimplyBat/Bottle_Dataset/main/images/Learning%20rate%20WB.png" alt="WB Training vs Testing Accuracy">
 
   <h2>Batch Size Experiments</h2>
-  <h3>Solar Terrain: Batch Size 16</h3>
-  <h3>Noble Puddle: Batch Size 64</h3>
+  <h3>Batch Size 16</h3>
+  <h3>Batch Size 64</h3>
   <img src="https://raw.githubusercontent.com/SimplyBat/Bottle_Dataset/main/images/batch%20size%20WB.png" alt="Batch Size WB">
   <img src="https://raw.githubusercontent.com/SimplyBat/Bottle_Dataset/main/images/batch%20size%20colab%202.png" alt="Batch Size Colab 2">
   <img src="https://raw.githubusercontent.com/SimplyBat/Bottle_Dataset/main/images/batch%20size%20colab.png" alt="Batch Size Colab">
 
   <h2>Learning Rate Experiments</h2>
-  <h3>Wobbly Smoke: Learning rate 0.001</h3>
-  <h3>Toasty Sun: Learning rate 0.0001</h3>
+  <h3>Learning Rate 0.001</h3>
+  <h3>Learning Rate 0.0001</h3>
   <img src="https://raw.githubusercontent.com/SimplyBat/Bottle_Dataset/main/images/Learning%20rate%20WB.png" alt="Learning Rate WB">
-  <img src="https://raw.githubusercontent.com/SimplyBat/Bottle_Dataset/main/images/Learning%20Rate%200.0001%20colab%202.png" alt="Learning Rate 0.0001 Colab 2">
-  <img src="https://raw.githubusercontent.com/SimplyBat/Bottle_Dataset/main/images/Learning%20rate%200.001%20colab%201.png" alt="Learning Rate 0.001 Colab 1">
+</div>
 
-  <h2>Data Augmentation Experiments</h2>
-  <h3>Warm Microwave: Non-Augmentation</h3>
-  <h3>Earthy Plant: Augmentation</h3>
-  <img src="https://raw.githubusercontent.com/SimplyBat/Bottle_Dataset/main/images/Data%20augmentation%20WB.png" alt="Data Augmentation WB">
-  <img src="https://raw.githubusercontent.com/SimplyBat/Bottle_Dataset/main/images/Data%20Augmention%20colab.png" alt="Data Augmentation Colab">
-  <img src="https://raw.githubusercontent.com/SimplyBat/Bottle_Dataset/main/images/Data%20Augmentation%20colab%202.png" alt="Data Augmentation Colab 2">
-
-  <h2>Architecture Comparison</h2>
-  <h3>Wobbly Star: ResNet</h3>
-  <h3>Volcanic Oath: VGG16</h3>
-  <h3>Grateful Dew: AlexNet</h3>
-  <img src="https://raw.githubusercontent.com/SimplyBat/Bottle_Dataset/main/images/Architecture%20comparison%20WB.png" alt="Architecture Comparison WB">
-  <img src="https://raw.githubusercontent.com/SimplyBat/Bottle_Dataset/main/images/Architecture%20comparison%203%20colab.png" alt="Architecture Comparison 3 Colab">
-  <img src="https://raw.githubusercontent.com/SimplyBat/Bottle_Dataset/main/images/Architecture%20comparison%202%20colab.png" alt="Architecture Comparison 2 Colab">
-  <img src="https://raw.githubusercontent.com/SimplyBat/Bottle_Dataset/main/images/Architecture%20comparison%201%20colab.png" alt="Architecture Comparison 1 Colab">
-</section>
+<div class="divider"></div>
 
 <!-- Key Takeaways -->
-<section id="key-takeaways" class="section">
+<div class="section fade-in">
   <h2>Key Takeaways 🎯</h2>
-  <p><strong>These experiments evaluated the impact of hardware acceleration, hyperparameter tuning, and model architecture on image classification performance.</strong></p>
   <ul>
     <li>
-      <p>📊 <strong>ResNet18 Outperformed Legacy Architectures:</strong> ResNet18 achieved the highest validation accuracy (65%), proving that residual connections were necessary for feature learning on this dataset. In contrast, AlexNet and VGG16 suffered from stagnation, failing to improve beyond the baseline accuracy of 59%.</p>
+      <p>📊 <span class="purple">ResNet18 outperformed AlexNet and VGG16:</span> highest validation accuracy of 65%.</p>
     </li>
     <li>
-      <p>🏆 <strong>Stability Trumps Speed:</strong> While larger learning rates (0.001) and batch sizes (64) offered faster initial computation, they caused the model to get stuck in local minima. A conservative configuration (Learning Rate 0.0001, Batch Size 32) was required to ensure consistent convergence.</p>
+      <p>🏆 <span class="purple">Stability is key:</span> smaller learning rates and batch sizes led to consistent convergence.</p>
     </li>
     <li>
-      <p>⚡ <strong>Complexity Requires Time:</strong> Data augmentation reduced accuracy by ~9% compared to the non-augmented baseline. This counter-intuitive result highlights that increasing data complexity (via rotation/flips) harms performance in short training runs (10 epochs) if the model is not given sufficient time to adapt.</p>
+      <p>⚡ <span class="purple">Data augmentation:</span> reduced accuracy in short 10-epoch runs.</p>
     </li>
   </ul>
-</section>
+</div>
+
+<div class="divider"></div>
+
+<footer>
+  Pure Earth AI • AlexNet Architecture
+</footer>
+
+<script>
+window.addEventListener('DOMContentLoaded', () => {
+  const elements = document.querySelectorAll('.section, .hero');
+
+  function handleScroll() {
+    const triggerBottom = window.innerHeight * 0.85;
+    elements.forEach(el => {
+      const rect = el.getBoundingClientRect();
+      if (rect.top < triggerBottom && rect.bottom > 0) {
+        el.style.opacity = 1;
+        el.style.transform = 'translateY(0)';
+      }
+    });
+  }
+
+  window.addEventListener('scroll', handleScroll);
+  handleScroll(); // optional, to catch elements in view on load
+});
+});
+</script>
 
 </body>
 </html>
