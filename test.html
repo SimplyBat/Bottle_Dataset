@@ -1,95 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Bottle Dataset Project Presentation</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>AlexNet Experiments – Project Results</title>
+
 <style>
-  body { font-family: Arial, sans-serif; margin: 40px; line-height: 1.6; }
-  h1, h2 { color: #333; }
-  .section { margin-bottom: 40px; }
-  .code-box {
-    background: #f5f5f5;
-    padding: 10px 15px;
-    border-left: 4px solid #555;
-    font-family: monospace;
-    white-space: pre;
+  body {
+    font-family: Arial, sans-serif;
+    margin: 40px;
+    line-height: 1.6;
+    background: #fafafa;
   }
-  img { max-width: 400px; border: 1px solid #ddd; border-radius: 4px; }
+  h1, h2, h3 {
+    color: #222;
+  }
+  .section {
+    margin-bottom: 50px;
+  }
+  img {
+    max-width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    margin: 10px 0;
+  }
+  .code-block {
+    background: #f4f4f4;
+    padding: 12px;
+    border-left: 4px solid #444;
+    font-family: monospace;
+    white-space: pre-wrap;
+  }
 </style>
 </head>
+
 <body>
 
-<h1>Bottle Dataset Project</h1>
-<p><b>Author:</b> Julio Gonzalez</p>
+<h1>Technical Approach with AlexNet ⚙️</h1>
 
 <div class="section">
-  <h2>1. Overview</h2>
   <p>
-    This project uses a bottle detection dataset (images + annotations) for
-    computer vision tasks. The dataset includes labeled bottles, bounding boxes,
-    and supporting scripts. This website presents the structure, methodology,
-    and results — without including the actual dataset files.
+    To evaluate the performance of classical convolutional networks on my dataset 
+    (<code>/content/drive/MyDrive/dataset</code>), I implemented and trained 
+    <strong>AlexNet</strong>, one of the earliest high-impact deep learning 
+    architectures for image classification. Although AlexNet is not state-of-the-art 
+    today, it provides a strong baseline and is ideal for comparing training behaviors 
+    under different conditions.
   </p>
 </div>
 
 <div class="section">
-  <h2>2. Repository Structure</h2>
-  <div class="code-box">
-Bottle_Dataset/
- ├── data/
- │    ├── raw/           # Original images (not included here)
- │    ├── processed/     # Preprocessed samples
- ├── annotations/        # COCO/CSV/XML annotations
- ├── scripts/            # Preprocessing + training scripts
- ├── models/             # Saved model checkpoints
- └── README.md
+  <h2>🧱 Model Architecture (AlexNet Overview)</h2>
+  <p>AlexNet consists of:</p>
+  <ul>
+    <li>5 convolutional layers with ReLU activation</li>
+    <li>Local Response Normalization (LRN)</li>
+    <li>Max-pooling layers</li>
+    <li>3 fully connected layers</li>
+    <li>Dropout in fully connected layers</li>
+  </ul>
+  <p>
+    The model is lighter than modern networks like ResNet or EfficientNet, making it 
+    easy to train on Google Colab while still expressive enough for complex visual 
+    patterns.
+  </p>
+</div>
+
+<div class="section">
+  <h2>🔧 Implementation Strategy</h2>
+
+  <h3>1. Importing Pretrained AlexNet</h3>
+  <p>I used pretrained ImageNet weights, and also trained AlexNet from scratch.</p>
+
+  <h3>2. Customizing the Classifier</h3>
+  <div class="code-block">
+model.classifier[6] = nn.Linear(4096, num_classes)
   </div>
 </div>
 
+<!-- ---------------------------------------- -->
+<!-- VISUALIZATION SECTION -->
+<!-- ---------------------------------------- -->
+
+<h1>📊 Visualizations</h1>
+<p>This section includes all plots generated during training in Colab.</p>
+
+<!-- Training Accuracy -->
 <div class="section">
-  <h2>3. Methods</h2>
-  <p>
-    Images were annotated using bounding boxes. A preprocessing script cleaned,
-    resized, and prepared the dataset for training. A convolutional neural
-    network (such as AlexNet, ResNet18, or VGG16) was used to train on the
-    annotated bottle examples.
-  </p>
+  <h2>WB Training vs Testing Accuracy</h2>
+  <img src="https://github.com/user-attachments/assets/95866d31-a80f-4c1b-9c7b-1809f5831bcb" alt="WB Training vs Testing Accuracy" />
 </div>
 
+<!-- Batch Size Section -->
 <div class="section">
-  <h2>4. Example Visualization</h2>
-  <p>Sample placeholder (not the actual dataset):</p>
-  <img src="https://via.placeholder.com/400x300?text=Bounding+Box+Example" />
+  <h1>Batch Size Experiments</h1>
+
+  <h2>Solar Terrain: Batch Size 16</h2>
+  <h2>Noble Puddle: Batch Size 64</h2>
+
+  <img src="https://github.com/user-attachments/assets/3eae6cea-39fb-4c57-878e-445962f20657" alt="Batch Size WB" />
+
+  <img src="https://github.com/user-attachments/assets/180f9a16-f686-4c96-9a15-3aebe66d59f5" alt="Batch Size Colab 2" />
+
+  <img src="https://github.com/user-attachments/assets/cdc4303e-1dbf-4e21-a1d4-bf720e72a48e" alt="Batch Size Colab" />
 </div>
 
+<!-- Learning Rate -->
 <div class="section">
-  <h2>5. Results</h2>
-  <p>
-    Below are the example training charts describing accuracy, loss, and model
-    performance over multiple experiments.
-  </p>
-  <img src="https://via.placeholder.com/600x300?text=Training+Accuracy+Plot" />
-  <br><br>
-  <img src="https://via.placeholder.com/600x300?text=Training+Loss+Plot" />
+  <h1>Learning Rate Experiments</h1>
+
+  <h2>Wobbly Smoke: Learning Rate 0.001</h2>
+  <h2>Toasty Sun: Learning Rate 0.0001</h2>
+
+  <img src="https://github.com/user-attachments/assets/f527b8df-ef83-4715-a613-5818d656e169" alt="Learning Rate WB" />
+
+  <img src="https://github.com/user-attachments/assets/d7abbbeb-94a4-49a8-8a47-ae6e8cd22d65" alt="Learning Rate 0.0001 Colab 2" />
+
+  <img src="https://github.com/user-attachments/assets/8ead7551-9406-4856-a290-dc1bf08af0cf" alt="Learning Rate 0.001 Colab 1" />
 </div>
 
+<!-- Data Augmentation -->
 <div class="section">
-  <h2>6. Takeaways</h2>
-  <ul>
-    <li>The dataset is well-structured for object detection tasks.</li>
-    <li>Different architectures (AlexNet, ResNet) produced different accuracy levels.</li>
-    <li>Data augmentation and hyperparameter tuning significantly improved results.</li>
-  </ul>
+  <h1>Data Augmentation Experiments</h1>
+
+  <h2>Warm Microwave: Non-Augmentation</h2>
+  <h2>Earthy Plant: Augmentation</h2>
+
+  <img src="https://github.com/user-attachments/assets/d2391112-b6cc-4111-b9a6-17fc76d567d3" alt="Data Augmentation WB" />
+
+  <img src="https://github.com/user-attachments/assets/794cb402-1b2d-4c15-8a87-d0abe23348f6" alt="Data Augmentation Colab" />
+
+  <img src="https://github.com/user-attachments/assets/df4bac28-65a7-47a8-8794-05c053021955" alt="Data Augmentation Colab 2" />
 </div>
 
+<!-- Architecture Comparison -->
 <div class="section">
-  <h2>7. GitHub Repository</h2>
-  <p>
-    Link to the project code:<br>
-    <a href="https://github.com/SimplyBat/Bottle_Dataset" target="_blank">
-      github.com/SimplyBat/Bottle_Dataset
-    </a>
-  </p>
+  <h1>Architecture Comparison</h1>
+
+  <h2>Wobbly Star: ResNet</h2>
+  <h2>Volcanic Oath: VGG16</h2>
+  <h2>Grateful Dew: AlexNet</h2>
+
+  <img src="https://github.com/user-attachments/assets/6b28dbd8-736e-4dc5-8db5-3ed4c5d349f0" alt="Architecture Comparison WB" />
+
+  <img src="https://github.com/user-attachments/assets/b6300147-1ca7-4eb7-ba47-b70b9803c216" alt="Architecture Comparison Colab 3" />
+
+  <img src="https://github.com/user-attachments/assets/5401697a-70e8-481e-b6b8-553e2d36da5b" alt="Architecture Comparison Colab 2" />
+
+  <img src="https://github.com/user-attachments/assets/2f9ff29e-9ea1-4540-b2da-137877b60e93" alt="Architecture Comparison Colab 1" />
 </div>
 
 </body>
